@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saloni | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8%;
+        }
+
+        .hero p {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: #94a3b8;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .intro {
+            max-width: 600px;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Saloni</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <p>Hello, I'm</p>
+
+            <h1>Saloni.</h1>
+
+            <h2>Welcome to my portfolio.</h2>
+
+            <p class="intro">
+                I'm a student and aspiring developer interested in technology,
+                creativity, and building useful things.
+            </p>
+
+            <a class="button" href="#projects">View My Work</a>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Write a short introduction about yourself here.
+                Tell visitors who you are, what you study, what you enjoy,
+                and what you're currently working on.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>
+                Your projects will go here.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                You can add your GitHub, LinkedIn, email, or other social links here.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Saloni. All rights reserved.
+    </footer>
+
+</body>
+</html>
