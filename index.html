@@ -8,202 +8,232 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg: #fbfaf8;
-    --ink: #1c1c1a;
-    --ink-soft: #55534c;
-    --line: #ddd9cf;
-    --link: #6b4a2f;
-    --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  :root {
+    --primary: #1565c0; /* Standard Academic theme blue */
+    --text-main: #2b2b2b;
+    --text-muted: #6c757d;
+    --bg-color: #ffffff;
+    --bg-alt: #f8f9fa;
+    --border-color: #e9ecef;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body{
-    font-family: var(--serif);
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 19px;
-    line-height: 1.7;
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  a{ color: var(--link); }
-  a:hover{ color: var(--ink); }
+  a { color: var(--primary); text-decoration: none; transition: all 0.2s ease; }
+  a:hover { color: #0d47a1; text-decoration: underline; }
 
-  :focus-visible{
-    outline: 1px solid var(--ink);
-    outline-offset: 3px;
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
+  nav .brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-main);
+  }
+  nav .brand:hover { text-decoration: none; color: var(--primary); }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  nav ul li a:hover { color: var(--primary); text-decoration: none; }
 
-  .wrap{
-    max-width: 680px;
+  .container {
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
-  header{
-    padding-top: 56px;
-    padding-bottom: 8px;
-  }
-
-  header h1{
-    font-size: 1.6rem;
-    font-weight: 500;
-  }
-
-  header h1 a{
-    text-decoration: none;
-    color: var(--ink);
-  }
-
-  nav{
-    margin-top: 18px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  nav ul{
-    list-style: none;
+  /* Profile / About Section */
+  .profile-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 0;
-    font-size: 1.02rem;
+    align-items: center;
+    padding: 80px 0 60px;
   }
-
-  nav li:not(:last-child)::after{
-    content: "\00b7";
-    margin: 0 10px;
-    color: var(--ink-soft);
+  .profile-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
   }
-
-  nav a{
-    text-decoration: none;
+  .profile-content .subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 2rem;
   }
-
-  nav a:hover{
-    text-decoration: underline;
-  }
-
-  main{
-    padding-top: 44px;
-    padding-bottom: 30px;
-  }
-
-  section{
-    margin-bottom: 52px;
-  }
-
-  section h2{
+  .profile-content p {
     font-size: 1.05rem;
-    font-weight: 500;
-    font-style: italic;
-    color: var(--ink-soft);
-    margin-bottom: 18px;
+    margin-bottom: 1.2rem;
+    color: var(--text-main);
   }
 
-  p{
-    margin-bottom: 16px;
+  /* Shared Section Styles */
+  section {
+    padding: 60px 0;
+  }
+  section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--text-main);
   }
 
-  p:last-child{ margin-bottom: 0; }
-
-  .entry{
-    margin-bottom: 22px;
-  }
-
-  .entry:last-child{ margin-bottom: 0; }
-
-  .entry .heading{
+  /* Timeline / Entry Layout (Experience & Education) */
+  .entry {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+  .entry:last-child { margin-bottom: 0; }
+  
+  .entry-meta {
+    flex: 0 0 200px;
+  }
+  .entry-date {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  
+  .entry-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  .entry-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+    color: var(--text-main);
+  }
+  .entry-org {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+  .entry-desc {
+    color: var(--text-main);
+    font-size: 1rem;
+  }
+  .entry-desc ul {
+    margin-top: 10px;
+    padding-left: 18px;
+  }
+  .entry-desc li { 
+    margin-bottom: 6px; 
+    color: var(--text-main);
   }
 
-  .entry .title{
+  /* Projects grid variant */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  .project-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .project-card .entry-title { margin-bottom: 12px; }
+
+  /* Contact List */
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-list li a {
+    font-size: 1.1rem;
     font-weight: 500;
   }
 
-  .entry .org{
-    font-style: italic;
-    color: var(--ink-soft);
-  }
-
-  .entry .when{
-    font-size: 0.92rem;
-    color: var(--ink-soft);
-    white-space: nowrap;
-  }
-
-  .entry p{
-    margin-top: 6px;
-    color: var(--ink-soft);
-    font-size: 0.98rem;
-  }
-
-  ul.plain{
-    list-style: none;
-    margin-top: 6px;
-  }
-
-  ul.plain li{
-    color: var(--ink-soft);
-    font-size: 0.98rem;
-    padding-left: 1em;
-    text-indent: -1em;
-    margin-top: 3px;
-  }
-
-  ul.plain li::before{
-    content: "— ";
-  }
-
-  .contact-list{
-    list-style: none;
-  }
-
-  .contact-list li{
-    margin-bottom: 6px;
-  }
-
-  footer{
-    padding: 30px 0 56px;
-    border-top: 1px solid var(--line);
-    color: var(--ink-soft);
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
     font-size: 0.9rem;
+    margin-top: 40px;
   }
 
-  @media (max-width: 520px){
-    body{ font-size: 17px; }
-    .entry .heading{ flex-direction: column; gap: 2px; }
+  @media (max-width: 768px) {
+    .entry-meta { flex: 0 0 100%; margin-bottom: -16px; }
+    .entry-date { font-size: 0.85rem; color: var(--primary); }
+    nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
   }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<nav>
+  <a href="#top" class="brand">Saloni Chourasiya</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <header>
-    <h1><a href="#top">Saloni Chourasiya</a></h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="container" id="top">
 
-  <main id="top">
-
-    <section id="about">
+  <section id="about" class="profile-section">
+    <div class="profile-content">
+      <h1>Saloni Chourasiya</h1>
+      <div class="subtitle">Physicist & AI/ML Engineer</div>
       <p>
         I'm a physicist working across optics, quantum systems, and machine learning.
         My research background is in experimental photonics — correcting wavefront
@@ -217,104 +247,121 @@
         for PhD positions in groups where careful experimental optics and modern
         computational methods meet.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section id="experience">
-      <h2>Experience &amp; education</h2>
+  <section id="experience">
+    <h2>Experience & Education</h2>
 
-      <div class="entry">
-        <div class="heading">
-          <span class="title">AI/ML Engineer</span>
-          <span class="when">Feb 2025 – Mar 2026</span>
-        </div>
-        <div class="org">Add company name</div>
-        <p>Add a line or two on what you built or shipped.</p>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">Feb 2025 – Mar 2026</div>
       </div>
-
-      <div class="entry">
-        <div class="heading">
-          <span class="title">Research project</span>
-          <span class="when">2024</span>
+      <div class="entry-content">
+        <div class="entry-title">AI/ML Engineer</div>
+        <div class="entry-org">Kare4U Healthcare Solutions</div>
+        <div class="entry-desc">
+          <p>Developed Generative AI and OCR pipelines for processing hospital billing documents and tariff structures.</p>
         </div>
-        <div class="org">Prof. Philip Walther's group, University of Vienna</div>
-        <p>Characterization of photonic integrated circuits.</p>
       </div>
+    </div>
 
-      <div class="entry">
-        <div class="heading">
-          <span class="title">Research / thesis assistant</span>
-          <span class="when">2023 – 2024</span>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">2024</div>
+      </div>
+      <div class="entry-content">
+        <div class="entry-title">Research project</div>
+        <div class="entry-org">Prof. Philip Walther's group, University of Vienna</div>
+        <div class="entry-desc">
+          <p>Characterization, calibration, and thermal crosstalk modeling of photonic integrated circuits.</p>
         </div>
-        <div class="org">Strongly Correlated Quantum Matter Group, Prof. Hanns-Christoph Nägerl, University of Innsbruck</div>
-        <ul class="plain">
-          <li>SLM-based wavefront aberration correction</li>
-          <li>Vibration isolation design for a high-finesse optical cavity</li>
-          <li>Bow-tie ring cavity SHG characterization</li>
-          <li>PDH laser frequency stabilization</li>
-        </ul>
       </div>
+    </div>
 
-      <div class="entry">
-        <div class="heading">
-          <span class="title">MSc Physics, Quantum Engineering</span>
-          <span class="when">2023 – 2024</span>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">2023 – 2024</div>
+      </div>
+      <div class="entry-content">
+        <div class="entry-title">Research / thesis assistant</div>
+        <div class="entry-org">Strongly Correlated Quantum Matter Group, Prof. Hanns-Christoph Nägerl, University of Innsbruck</div>
+        <div class="entry-desc">
+          <ul>
+            <li>SLM-based wavefront aberration correction</li>
+            <li>Vibration isolation design for a high-finesse optical cavity</li>
+            <li>Bow-tie ring cavity SHG characterization</li>
+            <li>PDH laser frequency stabilization</li>
+          </ul>
         </div>
-        <div class="org">University of Innsbruck, Austria</div>
       </div>
+    </div>
 
-      <div class="entry">
-        <div class="heading">
-          <span class="title">BSc (Research), Physics</span>
-          <span class="when">2019 – 2023</span>
-        </div>
-        <div class="org">Indian Institute of Science, India</div>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">2023 – 2024</div>
       </div>
-    </section>
+      <div class="entry-content">
+        <div class="entry-title">MSc Physics, Quantum Engineering</div>
+        <div class="entry-org">University of Innsbruck, Austria</div>
+      </div>
+    </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">2019 – 2023</div>
+      </div>
+      <div class="entry-content">
+        <div class="entry-title">BSc (Research), Physics</div>
+        <div class="entry-org">Indian Institute of Science, India</div>
+      </div>
+    </div>
+  </section>
 
-      <div class="entry">
-        <div class="title">PDH laser frequency stabilization</div>
-        <p>Locked a laser to a reference cavity using the Pound–Drever–Hall technique,
+  <section id="projects">
+    <h2>Projects</h2>
+    
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="entry-title">PDH laser frequency stabilization</div>
+        <p class="entry-desc">Locked a laser to a reference cavity using the Pound–Drever–Hall technique,
         building a stable light source for a quantum matter experiment.</p>
       </div>
 
-      <div class="entry">
-        <div class="title">Vibration isolation for a high-finesse cavity</div>
-        <p>Designed a vibration isolation scheme protecting a high-finesse optical
+      <div class="project-card">
+        <div class="entry-title">Vibration isolation for a high-finesse cavity</div>
+        <p class="entry-desc">Designed a vibration isolation scheme protecting a high-finesse optical
         cavity from mechanical noise, a precondition for stable frequency locking.</p>
       </div>
 
-      <div class="entry">
-        <div class="title">SLM wavefront aberration correction</div>
-        <p>Used a spatial light modulator to measure and correct wavefront aberrations
+      <div class="project-card">
+        <div class="entry-title">SLM wavefront aberration correction</div>
+        <p class="entry-desc">Used a spatial light modulator to measure and correct wavefront aberrations
         in a beam path, improving beam quality at the experiment.</p>
       </div>
 
-      <div class="entry">
-        <div class="title">Photonic integrated circuit characterization</div>
-        <p>Characterized photonic integrated circuits as part of a short research
+      <div class="project-card">
+        <div class="entry-title">Photonic integrated circuit characterization</div>
+        <p class="entry-desc">Characterized photonic integrated circuits as part of a short research
         project with a quantum optics group in Vienna.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><a href="mailto:you@example.com">you@example.com</a></li>
-        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
-        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2026 Saloni Chourasiya
-  </footer>
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:you@example.com">you@example.com</a></li>
+      <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
+      <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a></li>
+    </ul>
+  </section>
 
 </div>
+
+<footer>
+  © 2026 Saloni Chourasiya
+</footer>
 
 </body>
 </html>
