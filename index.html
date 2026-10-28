@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saloni Chourasiya</title>
-<meta name="description" content="Saloni Chourasiya — physicist working across optics, quantum systems, and machine learning.">
+<title>Saloni Chourasiya — Medical Imaging AI</title>
+<meta name="description" content="Saloni Chourasiya — AI/ML researcher working on weak supervision and medical imaging. Seeking RA/PhD positions in Europe.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 
 <style>
   :root {
-    --primary: #1565c0; /* Standard Academic theme blue */
+    --primary: #1565c0;
     --text-main: #2b2b2b;
     --text-muted: #6c757d;
     --bg-color: #ffffff;
@@ -23,7 +23,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -38,7 +37,6 @@
   a { color: var(--primary); text-decoration: none; transition: all 0.2s ease; }
   a:hover { color: #0d47a1; text-decoration: underline; }
 
-  /* Navbar */
   nav {
     display: flex;
     justify-content: space-between;
@@ -57,12 +55,7 @@
     color: var(--text-main);
   }
   nav .brand:hover { text-decoration: none; color: var(--primary); }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; }
   nav ul li a {
     font-family: var(--font-heading);
     font-size: 0.95rem;
@@ -73,25 +66,17 @@
   }
   nav ul li a:hover { color: var(--primary); text-decoration: none; }
 
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
-  /* Profile / About Section with Image */
   .profile-section {
     display: flex;
-    flex-wrap: wrap-reverse; /* Keeps image on top for mobile devices */
+    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
     padding: 80px 0 60px;
   }
-  .profile-content {
-    flex: 1;
-    min-width: 300px;
-  }
+  .profile-content { flex: 1; min-width: 300px; }
   .profile-content h1 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -106,18 +91,19 @@
     font-weight: 400;
     margin-bottom: 2rem;
   }
-  .profile-content p {
-    font-size: 1.05rem;
-    margin-bottom: 1.2rem;
-    color: var(--text-main);
+  .profile-content p { font-size: 1.05rem; margin-bottom: 1.2rem; color: var(--text-main); }
+  .profile-content .cta {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 500;
   }
-  
-  /* Profile Image Styling */
-  .profile-image-container {
-    flex: 0 0 250px;
-    display: flex;
-    justify-content: center;
-  }
+  .profile-content .cta:hover { background: #0d47a1; text-decoration: none; }
+
+  .profile-image-container { flex: 0 0 250px; display: flex; justify-content: center; }
   .profile-image {
     width: 250px;
     height: 250px;
@@ -127,10 +113,7 @@
     border: 4px solid var(--bg-alt);
   }
 
-  /* Shared Section Styles */
-  section {
-    padding: 60px 0;
-  }
+  section { padding: 60px 0; }
   section h2 {
     font-family: var(--font-heading);
     font-size: 1.75rem;
@@ -139,28 +122,11 @@
     color: var(--text-main);
   }
 
-  /* Timeline / Entry Layout (Experience & Education) */
-  .entry {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    gap: 24px;
-  }
+  .entry { display: flex; flex-wrap: wrap; margin-bottom: 40px; gap: 24px; }
   .entry:last-child { margin-bottom: 0; }
-  
-  .entry-meta {
-    flex: 0 0 200px;
-  }
-  .entry-date {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-  
-  .entry-content {
-    flex: 1;
-    min-width: 300px;
-  }
+  .entry-meta { flex: 0 0 200px; }
+  .entry-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
+  .entry-content { flex: 1; min-width: 300px; }
   .entry-title {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -168,26 +134,11 @@
     margin-bottom: 4px;
     color: var(--text-main);
   }
-  .entry-org {
-    font-weight: 400;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-  }
-  .entry-desc {
-    color: var(--text-main);
-    font-size: 1rem;
-  }
-  .entry-desc ul {
-    margin-top: 10px;
-    padding-left: 18px;
-  }
-  .entry-desc li { 
-    margin-bottom: 6px; 
-    color: var(--text-main);
-  }
+  .entry-org { font-weight: 400; color: var(--text-muted); margin-bottom: 12px; font-size: 0.95rem; }
+  .entry-desc { color: var(--text-main); font-size: 1rem; }
+  .entry-desc ul { margin-top: 10px; padding-left: 18px; }
+  .entry-desc li { margin-bottom: 6px; color: var(--text-main); }
 
-  /* Projects grid variant */
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -201,23 +152,21 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
+  .project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
   .project-card .entry-title { margin-bottom: 12px; }
+  .project-card .entry-desc { font-size: 0.98rem; }
+  .project-card .tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
 
-  /* Contact List */
-  .contact-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .contact-list li a {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .contact-list li a { font-size: 1.1rem; font-weight: 500; }
 
   footer {
     text-align: center;
@@ -244,8 +193,8 @@
   <a href="#top" class="brand">Saloni Chourasiya</a>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -255,23 +204,53 @@
   <section id="about" class="profile-section">
     <div class="profile-content">
       <h1>Saloni Chourasiya</h1>
-      <div class="subtitle">Physicist & AI/ML Engineer</div>
+      <div class="subtitle">AI/ML researcher · Medical imaging · Weak supervision</div>
       <p>
-        I'm a physicist working across optics, quantum systems, and machine learning.
-        My research background is in experimental photonics — correcting wavefront
-        aberrations with spatial light modulators, isolating optical cavities from
-        vibration, stabilizing lasers to a reference cavity — built during my master's
-        in a strongly correlated quantum matter group.
+        I build machine learning systems for medical imaging. My current work uses
+        instruction-tuned language models to extract weak labels from free-text
+        radiology reports, validates them against doctor-verified cases, and trains
+        multi-label imaging models on them.
       </p>
       <p>
-        I later spent a year working as an AI/ML engineer, which sharpened my
-        computational side without pulling me away from physics.
+        I have a physics master's from the University of Innsbruck and a year of
+        experience as an AI/ML engineer, where I built generative AI and OCR
+        pipelines for hospital billing documents.
       </p>
+      <p><strong>I am looking for RA or PhD positions in medical imaging AI in Europe.</strong></p>
+      <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </div>
-    
+
     <div class="profile-image-container">
-      <!-- REPLACE 'profile-picture.jpg' WITH YOUR ACTUAL IMAGE FILENAME -->
       <img src="profile-picture.jpg" alt="Saloni Chourasiya" class="profile-image">
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="entry-title">Knee MRI abnormality detection from radiology reports</div>
+        <p class="entry-desc">
+          Weakly supervised, multi-label detection of 12 knee findings on 3D knee MRI.
+          An instruction-tuned LLM (MedGemma-4B) extracts probabilistic labels from
+          free-text reports in 9 languages, with verbatim evidence quotes so every label
+          is auditable. Labels are validated against 58 doctor-verified cases per finding
+          and per language (AUC, F1, Cohen's kappa). ACL validated at AUC 0.944;
+          remaining findings preliminary. Imaging model follows an MRNet-style
+          multi-label CNN trained on the extracted labels.
+        </p>
+        <a class="tag" href="https://github.com/saloni644c/knee-abnormality" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="entry-title">Generative AI for hospital billing documents</div>
+        <p class="entry-desc">
+          Built GenAI and OCR pipelines at Kare4U Healthcare Solutions to process hospital
+          billing documents and tariff structures, extracting structured fields from
+          unstructured scans and text.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -279,9 +258,7 @@
     <h2>Experience & Education</h2>
 
     <div class="entry">
-      <div class="entry-meta">
-        <div class="entry-date">Jan 2025 – Mar 2026</div>
-      </div>
+      <div class="entry-meta"><div class="entry-date">Jan 2025 – Mar 2026</div></div>
       <div class="entry-content">
         <div class="entry-title">AI/ML Engineer</div>
         <div class="entry-org">Kare4U Healthcare Solutions</div>
@@ -292,9 +269,7 @@
     </div>
 
     <div class="entry">
-      <div class="entry-meta">
-        <div class="entry-date">Apr 2026 - Aug 2026</div>
-      </div>
+      <div class="entry-meta"><div class="entry-date">Apr 2026 – Aug 2026</div></div>
       <div class="entry-content">
         <div class="entry-title">Research project</div>
         <div class="entry-org">Prof. Philip Walther's group, University of Vienna</div>
@@ -305,12 +280,10 @@
     </div>
 
     <div class="entry">
-      <div class="entry-meta">
-        <div class="entry-date">2023 – 2024</div>
-      </div>
+      <div class="entry-meta"><div class="entry-date">2023 – 2026</div></div>
       <div class="entry-content">
-        <div class="entry-title">Research / thesis assistant</div>
-        <div class="entry-org">Strongly Correlated Quantum Matter Group, Prof. Hanns-Christoph Nägerl, University of Innsbruck</div>
+        <div class="entry-title">MSc Physics, Quantum Engineering</div>
+        <div class="entry-org">University of Innsbruck, Austria</div>
         <div class="entry-desc">
           <ul>
             <li>SLM-based wavefront aberration correction</li>
@@ -323,52 +296,10 @@
     </div>
 
     <div class="entry">
-      <div class="entry-meta">
-        <div class="entry-date">2023 – 2026</div>
-      </div>
-      <div class="entry-content">
-        <div class="entry-title">MSc Physics, Quantum Engineering</div>
-        <div class="entry-org">University of Innsbruck, Austria</div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-meta">
-        <div class="entry-date">2019 – 2023</div>
-      </div>
+      <div class="entry-meta"><div class="entry-date">2019 – 2023</div></div>
       <div class="entry-content">
         <div class="entry-title">BSc (Research), Physics</div>
         <div class="entry-org">Indian Institute of Science, India</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    
-    <div class="project-grid">
-      <div class="project-card">
-        <div class="entry-title">PDH laser frequency stabilization</div>
-        <p class="entry-desc">Locked a laser to a reference cavity using the Pound–Drever–Hall technique,
-        building a stable light source for a quantum matter experiment.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="entry-title">Vibration isolation for a high-finesse cavity</div>
-        <p class="entry-desc">Designed a vibration isolation scheme protecting a high-finesse optical
-        cavity from mechanical noise, a precondition for stable frequency locking.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="entry-title">SLM wavefront aberration correction</div>
-        <p class="entry-desc">Used a spatial light modulator to measure and correct wavefront aberrations
-        in a beam path, improving beam quality at the experiment.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="entry-title">Photonic integrated circuit characterization</div>
-        <p class="entry-desc">Characterized photonic integrated circuits as part of a short research
-        project with a quantum optics group in Vienna.</p>
       </div>
     </div>
   </section>
