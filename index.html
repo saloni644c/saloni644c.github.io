@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saloni Chourasiya — Medical Imaging AI</title>
-<meta name="description" content="Saloni Chourasiya — AI/ML Engineer and Physicist.">
+<title>Saloni Chourasiya | AI/ML Engineer and Physicist</title>
+<meta name="description" content="Saloni Chourasiya is an AI/ML engineer with a physics background, working on weak supervision, document and vision-language pipelines, and inverse problems. Based in Austria, open to roles in Europe.">
+<meta property="og:title" content="Saloni Chourasiya | AI/ML Engineer and Physicist">
+<meta property="og:description" content="Turning indirect, incomplete signals into reliable estimates: from radiology reports to photonic chips.">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,37 +16,52 @@
 <style>
   :root {
     --primary: #1565c0;
+    --primary-dark: #0d47a1;
     --text-main: #2b2b2b;
     --text-muted: #6c757d;
     --bg-color: #ffffff;
     --bg-alt: #f8f9fa;
     --border-color: #e9ecef;
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #64a8f0;
+      --primary-dark: #90c2f7;
+      --text-main: #e8e8e8;
+      --text-muted: #9aa3ab;
+      --bg-color: #15181c;
+      --bg-alt: #1d2126;
+      --border-color: #2a2f35;
+    }
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   body {
     font-family: var(--font-body);
     background: var(--bg-color);
     color: var(--text-main);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: var(--primary); text-decoration: none; transition: all 0.2s ease; }
-  a:hover { color: #0d47a1; text-decoration: underline; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: var(--primary-dark); text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 2px; }
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5%;
+    padding: 1.1rem 5%;
     background: var(--bg-color);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -51,57 +69,56 @@
   nav .brand {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-main);
   }
   nav .brand:hover { text-decoration: none; color: var(--primary); }
-  nav ul { list-style: none; display: flex; gap: 1.5rem; }
+  nav ul { list-style: none; display: flex; gap: 1.6rem; }
   nav ul li a {
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 600;
-    color: rgba(0,0,0,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: var(--text-muted);
   }
   nav ul li a:hover { color: var(--primary); text-decoration: none; }
 
   .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
+  /* Hero */
   .profile-section {
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    padding: 80px 0 60px;
+    padding: 80px 0 48px;
   }
   .profile-content { flex: 1; min-width: 300px; }
   .profile-content h1 {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
   }
   .profile-content .subtitle {
-    font-family: var(--font-body);
     font-size: 1.2rem;
     color: var(--text-muted);
-    font-weight: 400;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
   }
-  .profile-content p { font-size: 1.05rem; margin-bottom: 1.2rem; color: var(--text-main); }
-  .profile-content .cta {
+  .profile-content p { font-size: 1.05rem; margin-bottom: 1.1rem; max-width: 62ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.4rem; }
+  .btn {
     display: inline-block;
-    margin-top: 0.5rem;
-    padding: 10px 18px;
-    background: var(--primary);
-    color: #fff;
+    padding: 10px 20px;
     border-radius: 6px;
     font-weight: 500;
+    border: 1px solid var(--primary);
   }
-  .profile-content .cta:hover { background: #0d47a1; text-decoration: none; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-dark); color: #fff; text-decoration: none; }
+  .btn-secondary { background: transparent; color: var(--primary); }
+  .btn-secondary:hover { background: var(--bg-alt); text-decoration: none; }
 
   .profile-image-container { flex: 0 0 250px; display: flex; justify-content: center; }
   .profile-image {
@@ -109,20 +126,52 @@
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     border: 4px solid var(--bg-alt);
   }
 
-  section { padding: 60px 0; }
+  section { padding: 56px 0; }
   section h2 {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    margin-bottom: 40px;
-    color: var(--text-main);
+    margin-bottom: 12px;
   }
+  .section-intro { color: var(--text-muted); margin-bottom: 36px; max-width: 62ch; }
 
-  .entry { display: flex; flex-wrap: wrap; margin-bottom: 40px; gap: 24px; }
+  /* Focus areas: a plain three-column strip, not cards */
+  .focus-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .focus-strip h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .focus-strip p { font-size: 0.97rem; color: var(--text-muted); }
+
+  /* Work */
+  .work-list { display: flex; flex-direction: column; gap: 44px; }
+  .work-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .work-item .work-context { font-size: 0.93rem; color: var(--text-muted); margin-bottom: 12px; }
+  .work-item p { margin-bottom: 10px; max-width: 70ch; }
+  .work-item ul { padding-left: 18px; margin-bottom: 10px; max-width: 70ch; }
+  .work-item li { margin-bottom: 6px; }
+  .work-item .stack { font-size: 0.9rem; color: var(--text-muted); }
+  .work-item .links a { font-weight: 500; margin-right: 18px; }
+
+  /* Timeline entries */
+  .entry { display: flex; flex-wrap: wrap; margin-bottom: 36px; gap: 24px; }
   .entry:last-child { margin-bottom: 0; }
   .entry-meta { flex: 0 0 200px; }
   .entry-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
@@ -130,58 +179,47 @@
   .entry-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 4px;
-    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 2px;
   }
-  .entry-org { font-weight: 400; color: var(--text-muted); margin-bottom: 12px; font-size: 0.95rem; }
-  .entry-desc { color: var(--text-main); font-size: 1rem; }
-  .entry-desc ul { margin-top: 10px; padding-left: 18px; }
-  .entry-desc li { margin-bottom: 6px; color: var(--text-main); }
+  .entry-org { color: var(--text-muted); margin-bottom: 10px; font-size: 0.95rem; }
+  .entry-desc ul { padding-left: 18px; }
+  .entry-desc li { margin-bottom: 6px; }
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-  }
-  .project-card {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-  .project-card .entry-title { margin-bottom: 12px; }
-  .project-card .entry-desc { font-size: 0.98rem; }
-  .project-card .tag {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 0.8rem;
-    color: var(--primary);
+  .subhead {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin: 48px 0 24px;
   }
 
+  /* Now */
+  .now-list { list-style: none; max-width: 70ch; }
+  .now-list li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+  .now-list li:last-child { border-bottom: none; }
+  .updated { margin-top: 16px; font-size: 0.9rem; color: var(--text-muted); }
+
+  /* Contact */
   .contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .contact-list li a { font-size: 1.1rem; font-weight: 500; }
 
   footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 36px 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
     font-size: 0.9rem;
-    margin-top: 40px;
+    margin-top: 32px;
   }
 
   @media (max-width: 768px) {
-    .profile-section { flex-direction: column-reverse; text-align: center; }
+    .profile-section { flex-direction: column-reverse; text-align: center; padding-top: 48px; }
+    .profile-content p { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
     .entry-meta { flex: 0 0 100%; margin-bottom: -16px; }
     .entry-date { font-size: 0.85rem; color: var(--primary); }
-    nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+    nav { flex-direction: column; gap: 0.8rem; padding: 1rem; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
   }
 </style>
@@ -193,124 +231,205 @@
   <a href="#top" class="brand">Saloni Chourasiya</a>
   <ul>
     <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
+    <li><a href="#work">Work</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#now">Now</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <div class="container" id="top">
 
+  <!-- HERO -->
   <section id="about" class="profile-section">
     <div class="profile-content">
       <h1>Saloni Chourasiya</h1>
-      <div class="subtitle">AI/ML researcher · Medical imaging · Weak supervision</div>
+      <div class="subtitle">AI/ML engineer with a physics background</div>
       <p>
-        I build machine learning systems for medical imaging. My current work uses
-        instruction-tuned language models to extract weak labels from free-text
-        radiology reports, validates them against doctor-verified cases, and trains
-        multi-label imaging models on them.
+        I turn indirect, incomplete signals into reliable estimates. That has meant
+        pulling diagnoses out of free-text radiology reports, structured fields out of
+        hospital bills, and device parameters out of photonic chip measurements.
       </p>
       <p>
-        I have a physics master's from the University of Innsbruck and a year of
-        experience as an AI/ML engineer, where I built generative AI and OCR
-        pipelines for hospital billing documents.
+        I studied physics at IISc Bangalore and the University of Innsbruck, then spent a
+        year building ML systems at a healthcare startup, from first prototype to client demo.
       </p>
-      <p><strong>I am looking for RA or PhD positions in medical imaging AI in Europe.</strong></p>
-      <a class="cta" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      <p>
+        <strong>I&rsquo;m looking for ML roles in Europe,</strong> from research assistant and PhD
+        positions to applied teams building real products. I finish my MSc in December 2026.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:saloni.edpa@gmail.com">Get in touch</a>
+        <a class="btn btn-secondary" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </div>
     </div>
 
     <div class="profile-image-container">
-      <img src="profile-picture.jpg" alt="Saloni Chourasiya" class="profile-image">
+      <img src="profile-picture.jpg" alt="Portrait of Saloni Chourasiya" class="profile-image">
     </div>
   </section>
 
-  <section id="research">
-    <h2>Research</h2>
+  <!-- WHAT I DO -->
+  <div class="focus-strip" aria-label="Areas of focus">
+    <div>
+      <h3>Learning from weak labels</h3>
+      <p>Using language models to generate training labels where expert annotation is scarce, and checking them against clinician-verified cases.</p>
+    </div>
+    <div>
+      <h3>Document and vision-language pipelines</h3>
+      <p>Turning scans, bills and reports into structured data, with model choices backed by head-to-head comparisons.</p>
+    </div>
+    <div>
+      <h3>Inverse problems and optimization</h3>
+      <p>Recovering hidden parameters from hardware and spectral data, and closing the loop with feedback-driven optimizers.</p>
+    </div>
+  </div>
 
-    <div class="project-grid">
-      <div class="project-card">
-        <div class="entry-title">Knee MRI abnormality detection from radiology reports</div>
-        <p class="entry-desc">
-          Weakly supervised, multi-label detection of 12 knee findings on 3D knee MRI.
-          An instruction-tuned LLM (MedGemma-4B) extracts probabilistic labels from
-          free-text reports in 9 languages, with verbatim evidence quotes so every label
-          is auditable. Labels are validated against 58 doctor-verified cases per finding
-          and per language (AUC, F1, Cohen's kappa). ACL validated at AUC 0.944;
-          remaining findings preliminary. Imaging model follows an MRNet-style
-          multi-label CNN trained on the extracted labels.
+  <!-- WORK -->
+  <section id="work">
+    <h2>Selected work</h2>
+    <p class="section-intro">A mix of ongoing research, industry projects and physics-lab work. The common thread is estimating something you can&rsquo;t observe directly.</p>
+
+    <div class="work-list">
+
+      <div class="work-item">
+        <h3>Knee MRI abnormality detection from radiology reports</h3>
+        <div class="work-context">Kaggle RSNA challenge, ongoing</div>
+        <p>
+          A weakly supervised pipeline for 12 knee findings. MedGemma-4B reads more than 4,400
+          multilingual radiology reports (9 languages) and returns a label, a confidence score and a
+          verbatim evidence quote for each finding, so every label can be traced back to the text.
         </p>
-        <a class="tag" href="https://github.com/saloni644c/knee-abnormality" target="_blank" rel="noopener">GitHub →</a>
+        <ul>
+          <li>Checked against 58 expert-labelled reports. Macro AUC across all 12 findings is currently 0.78 and still improving; the ACL label alone reaches 0.944.</li>
+          <li>The imaging model is an MRNet-style multi-view CNN (pretrained AlexNet per MRI plane, slice-wise max-pooling) trained on the LLM-generated labels instead of expert annotations.</li>
+        </ul>
+        <p class="stack">PyTorch, MedGemma, multi-label classification</p>
+        <p class="links"><a href="https://github.com/saloni644c/knee-abnormality" target="_blank" rel="noopener">Code on GitHub</a></p>
       </div>
 
-      <div class="project-card">
-        <div class="entry-title">Generative AI for hospital billing documents</div>
-        <p class="entry-desc">
-          Built GenAI and OCR pipelines at Kare4U Healthcare Solutions to process hospital
-          billing documents and tariff structures, extracting structured fields from
-          unstructured scans and text.
-        </p>
+      <div class="work-item">
+        <h3>Document extraction and claim review for hospital bills</h3>
+        <div class="work-context">Kare4u Healthcare Solutions, 2025 to 2026</div>
+        <ul>
+          <li>Compared 9+ OCR and vision-language models on accuracy and latency, then built post-processing that maps varied provider formats into one PostgreSQL schema. Structured extraction succeeded on 75% of nearly 100 documents.</li>
+          <li>Added rule-based checks with an LLM that explains each flagged line item in plain language. On 100 hospital bills (about 100 line items each), roughly 85% of line items were handled correctly and the rest went to human review.</li>
+          <li>Delivered a working demo (FastAPI backend, React frontend) covering upload, processing and results, and presented it to clients.</li>
+        </ul>
+        <p class="stack">Python, FastAPI, React, PostgreSQL, AWS GPU instances</p>
       </div>
+
+      <div class="work-item">
+        <h3>Crosstalk modeling for photonic integrated circuits</h3>
+        <div class="work-context">University of Vienna, Prof. Philip Walther&rsquo;s group, 2026</div>
+        <p>
+          Built a physics-based inverse model fitted to hardware measurements to estimate device-level
+          crosstalk parameters, so that crosstalk can be compensated when programming the chip.
+        </p>
+        <p class="stack">Python, numerical modeling, parameter estimation</p>
+      </div>
+
+      <div class="work-item">
+        <h3>Camera-in-the-loop aberration correction</h3>
+        <div class="work-context">University of Innsbruck, research assistant, 2023 to 2024</div>
+        <p>
+          Wrote a multi-stage, derivative-free coordinate descent optimizer that uses camera feedback
+          to correct optical aberrations with a spatial light modulator. It improved imaging resolution by 10%.
+        </p>
+        <p class="stack">Python, optimization, hardware control</p>
+      </div>
+
     </div>
   </section>
 
+  <!-- EXPERIENCE & EDUCATION -->
   <section id="experience">
-    <h2>Experience & Education</h2>
+    <h2>Experience and education</h2>
 
     <div class="entry">
-      <div class="entry-meta"><div class="entry-date">Jan 2025 – Mar 2026</div></div>
+      <div class="entry-meta"><div class="entry-date">Apr 2026 to Aug 2026</div></div>
       <div class="entry-content">
-        <div class="entry-title">AI/ML Engineer</div>
-        <div class="entry-org">Kare4U Healthcare Solutions</div>
-        <div class="entry-desc">
-          <p>Developed Generative AI and OCR pipelines for processing hospital billing documents and tariff structures.</p>
-        </div>
+        <div class="entry-title">Research intern</div>
+        <div class="entry-org">University of Vienna, Prof. Philip Walther&rsquo;s group</div>
+        <div class="entry-desc"><p>Inverse modeling of thermal crosstalk in photonic integrated circuits.</p></div>
       </div>
     </div>
 
     <div class="entry">
-      <div class="entry-meta"><div class="entry-date">Apr 2026 – Aug 2026</div></div>
+      <div class="entry-meta"><div class="entry-date">Feb 2025 to Mar 2026</div></div>
       <div class="entry-content">
-        <div class="entry-title">Research project</div>
-        <div class="entry-org">Prof. Philip Walther's group, University of Vienna</div>
-        <div class="entry-desc">
-          <p>Characterization, calibration, and thermal crosstalk modeling of photonic integrated circuits.</p>
-        </div>
+        <div class="entry-title">AI/ML engineer</div>
+        <div class="entry-org">Kare4u Healthcare Solutions (intern Feb to May 2025, full-time from June 2025)</div>
+        <div class="entry-desc"><p>Document extraction, claim review and an end-to-end client demo for hospital billing data.</p></div>
       </div>
     </div>
 
     <div class="entry">
-      <div class="entry-meta"><div class="entry-date">2023 – 2026</div></div>
+      <div class="entry-meta"><div class="entry-date">Aug 2023 to Nov 2024</div></div>
       <div class="entry-content">
-        <div class="entry-title">MSc Physics, Quantum Engineering</div>
+        <div class="entry-title">Research assistant</div>
         <div class="entry-org">University of Innsbruck, Austria</div>
+        <div class="entry-desc"><p>Derivative-free optimization for optical aberration correction.</p></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><div class="entry-date">2023 to 2026</div></div>
+      <div class="entry-content">
+        <div class="entry-title">MSc Physics</div>
+        <div class="entry-org">University of Innsbruck, Austria (defense December 2026)</div>
         <div class="entry-desc">
+          <p>Coursework and lab projects in computational modeling and applied machine learning, plus experimental optics:</p>
           <ul>
-            <li>SLM-based wavefront aberration correction</li>
+            <li>Spatial-light-modulator wavefront aberration correction</li>
             <li>Vibration isolation design for a high-finesse optical cavity</li>
-            <li>Bow-tie ring cavity SHG characterization</li>
-            <li>PDH laser frequency stabilization</li>
+            <li>Bow-tie ring cavity second-harmonic generation</li>
+            <li>Pound-Drever-Hall laser frequency stabilization</li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="entry">
-      <div class="entry-meta"><div class="entry-date">2019 – 2023</div></div>
+      <div class="entry-meta"><div class="entry-date">2019 to 2023</div></div>
       <div class="entry-content">
-        <div class="entry-title">BSc (Research), Physics</div>
-        <div class="entry-org">Indian Institute of Science, India</div>
+        <div class="entry-title">BSc (Research) Physics</div>
+        <div class="entry-org">Indian Institute of Science, Bangalore</div>
+        <div class="entry-desc"><p>Research intern, Aug to Dec 2021: multi-Gaussian fits of emission spectra across 17 temperatures with nonlinear least squares, plus a workflow that reuses earlier fits as starting guesses.</p></div>
       </div>
+    </div>
+
+    <h3 class="subhead">Talks and workshops</h3>
+
+    <div class="entry">
+      <div class="entry-meta"><div class="entry-date">Jun 2026</div></div>
+      <div class="entry-content"><p>Venture Creation Summer School, University of Vienna (participant)</p></div>
+    </div>
+    <div class="entry">
+      <div class="entry-meta"><div class="entry-date">Sep 2024</div></div>
+      <div class="entry-content"><p>Greenhorn Meeting 2024, University of Siegen: talk and poster</p></div>
+    </div>
+    <div class="entry">
+      <div class="entry-meta"><div class="entry-date">Apr 2024</div></div>
+      <div class="entry-content"><p>ICTP Workshop on Frontiers in Quantum Simulation and Machine Learning, Trieste (full scholarship)</p></div>
     </div>
   </section>
 
- <section id="publication">
-     <h2>Publication</h2>
-     <p>Loading soon</p>
+  <!-- NOW -->
+  <section id="now">
+    <h2>Now</h2>
+    <ul class="now-list">
+      <li>Improving the knee MRI label extraction and training the multi-view CNN on it.</li>
+      <li>Finishing my MSc Physics and preparing the defense for December.</li>
+      <li>Talking to research groups and teams in Europe about PhD, research assistant and ML engineering roles.</li>
+    </ul>
+    <p class="updated">Last updated November 2026</p>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
+    <p class="section-intro">If you&rsquo;re hiring, supervising, or working on something related, I&rsquo;d be glad to hear from you.</p>
     <ul class="contact-list">
       <li><a href="mailto:saloni.edpa@gmail.com">saloni.edpa@gmail.com</a></li>
       <li><a href="https://github.com/saloni644c" target="_blank" rel="noopener">github.com/saloni644c</a></li>
@@ -321,7 +440,7 @@
 </div>
 
 <footer>
-  © 2026 Saloni Chourasiya
+  &copy; 2026 Saloni Chourasiya
 </footer>
 
 </body>
